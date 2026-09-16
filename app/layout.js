@@ -6,6 +6,9 @@ import JsonLd from '@/components/JsonLd';
 import { site, areas } from '@/lib/site';
 
 export const metadata = {
+  verification: {
+  google: "3SGiMTVpcCRKIjTvA74FQzv6P84zyPWDkVGk_wsHuls",
+},
   metadataBase: new URL(site.url),
   title: {
     default: 'Property Dealer in Jind | Plots, Kothi, Shops & Land',
