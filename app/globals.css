@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --rule: rgba(22, 19, 15, 0.14);
+  --font-display: 'Marcellus', Georgia, 'Times New Roman', serif;
+  --font-body: 'Libre Franklin', system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #f5f3f0;
+  color: #16130f;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: #e7ca74;
+  color: #16130f;
+}
+
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible {
+  outline: 2px solid #b8912a;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+@layer components {
+  .wrap {
+    @apply mx-auto w-full max-w-content px-5 sm:px-8;
+  }
+  .h1 {
+    @apply font-display text-[2.1rem] leading-[1.12] sm:text-5xl lg:text-[3.4rem];
+  }
+  .h2 {
+    @apply font-display text-[1.6rem] leading-[1.18] sm:text-[2.1rem];
+  }
+  .h3 {
+    @apply font-display text-xl leading-snug sm:text-[1.35rem];
+  }
+  .lede {
+    @apply text-[1.02rem] leading-[1.75] text-clay sm:text-[1.08rem];
+  }
+  .btn-gold {
+    @apply inline-flex items-center justify-center gap-2 bg-gold px-6 py-3.5 font-body text-sm font-semibold tracking-wide text-ink transition-colors hover:bg-goldlight;
+  }
+  .btn-ink {
+    @apply inline-flex items-center justify-center gap-2 border border-ink/25 px-6 py-3.5 font-body text-sm font-semibold tracking-wide text-ink transition-colors hover:border-gold hover:text-gold;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 border border-goldlight/40 px-6 py-3.5 font-body text-sm font-semibold tracking-wide text-goldlight transition-colors hover:bg-goldlight hover:text-ink;
+  }
+  .rule-gold {
+    @apply block h-[3px] w-14 bg-gold;
+  }
+  .card {
+    @apply border border-sand bg-white transition-shadow hover:shadow-lift;
+  }
+  .prose-page h2 {
+    @apply h2 mt-12 mb-3 text-ink;
+  }
+  .prose-page h3 {
+    @apply h3 mt-8 mb-2 text-ink;
+  }
+  .prose-page p {
+    @apply mb-5 text-[1.03rem] leading-[1.8] text-inksoft;
+  }
+  .prose-page ul {
+    @apply mb-6 space-y-2.5 pl-1;
+  }
+  .prose-page li {
+    @apply relative pl-6 text-[1.02rem] leading-[1.75] text-inksoft;
+  }
+  .prose-page li::before {
+    content: '';
+    @apply absolute left-0 top-[0.7em] h-1.5 w-1.5 bg-gold;
+  }
+  .prose-page a {
+    @apply font-semibold text-gold underline decoration-gold/40 underline-offset-4 hover:decoration-gold;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
