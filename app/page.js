@@ -121,19 +121,6 @@ export default function HomePage() {
               ))}
             </dl>
           </div>
-
-          <div className="hidden justify-self-center lg:block">
-            <div className="border border-goldlight/40 bg-ivory p-5 shadow-lift">
-              <Image
-                src="/logo.webp"
-                alt="Satyanarayan Property Dealer logo — buy, sell, rent, invest"
-                width={420}
-                height={420}
-                className="w-[19rem]"
-                priority
-              />
-            </div>
-          </div>
         </div>
       </section>
 
