@@ -88,7 +88,7 @@ export default function HomePage() {
           fill
           priority
           sizes="100vw"
-          className="object-cover opacity-45"
+         className="object-cover object-center opacity-35 sm:opacity-40 lg:opacity-45"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/85 to-ink/35" aria-hidden="true" />
         <div className="wrap relative grid gap-10 py-16 sm:py-24 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
