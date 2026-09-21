@@ -83,7 +83,7 @@ export default function HomePage() {
       {/* HERO */}
       <section className="relative isolate overflow-hidden bg-ink">
         <Image
-          src="/images/jind-property-dealer-hero.webp"
+          src="/images/banner.webp"
           alt="Property dealer in Jind, Haryana — plots, kothi and shops"
           fill
           priority
