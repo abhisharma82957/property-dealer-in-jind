@@ -57,39 +57,48 @@ export default function BlogIndex() {
       </section>
 
       <section className="wrap py-14 sm:py-16">
-        <div className="space-y-12">
-          {posts.map((p) => (
-            <article key={p.slug} className="grid gap-6 border-b border-sand pb-12 last:border-0 md:grid-cols-[0.9fr_1.1fr]">
-              <Link href={`/blog/${p.slug}`} className="block">
-                <Image
-                  src={p.image}
-                  alt={p.alt}
-                  width={1200}
-                  height={675}
-                  sizes="(max-width: 768px) 100vw, 40vw"
-                  className="aspect-[16/9] w-full border border-sand object-cover"
-                />
-              </Link>
-              <div>
-                <p className="font-body text-[0.8rem] text-clay">
-                  {fmt(p.date)} · {p.readTime}
-                </p>
-                <h2 className="h3 mt-2 text-ink">
-                  <Link href={`/blog/${p.slug}`} className="hover:text-gold">
-                    {p.h1}
-                  </Link>
-                </h2>
-                <p className="mt-3 font-body text-[0.97rem] leading-[1.75] text-inksoft">{p.excerpt}</p>
-                <Link
-                  href={`/blog/${p.slug}`}
-                  className="mt-4 inline-block font-body text-[0.9rem] font-semibold text-gold underline decoration-gold/40 underline-offset-4"
-                >
-                  Read the full guide
-                </Link>
-              </div>
-            </article>
-          ))}
-        </div>
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+  {posts.map((p) => (
+    <article
+      key={p.slug}
+      className="flex h-full flex-col overflow-hidden border border-sand bg-white"
+    >
+      <Link href={`/blog/${p.slug}`} className="block">
+        <Image
+          src={p.image}
+          alt={p.alt}
+          width={1200}
+          height={675}
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          className="aspect-[16/9] w-full object-cover"
+        />
+      </Link>
+
+      <div className="flex flex-1 flex-col p-5">
+        <p className="font-body text-[0.8rem] text-clay">
+          {fmt(p.date)} · {p.readTime}
+        </p>
+
+        <h2 className="h3 mt-2 text-ink">
+          <Link href={`/blog/${p.slug}`} className="hover:text-gold">
+            {p.h1}
+          </Link>
+        </h2>
+
+        <p className="mt-3 font-body text-[0.95rem] leading-[1.7] text-inksoft">
+          {p.excerpt}
+        </p>
+
+        <Link
+          href={`/blog/${p.slug}`}
+          className="mt-auto inline-block pt-5 font-body text-[0.9rem] font-semibold text-gold underline decoration-gold/40 underline-offset-4"
+        >
+          Read the full guide
+        </Link>
+      </div>
+    </article>
+  ))}
+</div>
 
         <div className="mt-6 border border-gold/40 bg-white p-8">
           <h2 className="h3 text-ink">Question not covered here?</h2>
