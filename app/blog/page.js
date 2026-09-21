@@ -61,7 +61,7 @@ export default function BlogIndex() {
   {posts.map((p) => (
     <article
       key={p.slug}
-      className="flex h-full flex-col overflow-hidden border border-sand bg-white"
+      className="overflow-hidden border border-sand bg-white"
     >
       <Link href={`/blog/${p.slug}`} className="block">
         <Image
@@ -74,7 +74,7 @@ export default function BlogIndex() {
         />
       </Link>
 
-      <div className="flex flex-1 flex-col p-5">
+     <div className="p-5">
         <p className="font-body text-[0.8rem] text-clay">
           {fmt(p.date)} · {p.readTime}
         </p>
@@ -91,7 +91,7 @@ export default function BlogIndex() {
 
         <Link
           href={`/blog/${p.slug}`}
-          className="mt-auto inline-block pt-5 font-body text-[0.9rem] font-semibold text-gold underline decoration-gold/40 underline-offset-4"
+          className="mt-4 inline-block font-body text-[0.9rem] font-semibold text-gold underline decoration-gold/40 underline-offset-4"
         >
           Read the full guide
         </Link>
