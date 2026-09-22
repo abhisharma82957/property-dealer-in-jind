@@ -61,28 +61,7 @@ function renderTextWithLink(text) {
   );
 }
 
-function Block({ b }) {
-  if (b.type === 'h2') return <h2>{b.text}</h2>;
-  if (b.type === 'h3') return <h3>{b.text}</h3>;
 
-  if (b.type === 'quote')
-    return (
-      <blockquote className="my-8 border-l-2 border-gold bg-white px-6 py-5 font-display text-[1.15rem] leading-relaxed text-ink">
-        {b.text}
-      </blockquote>
-    );
-
-  if (b.type === 'ul')
-    return (
-      <ul>
-        {b.items.map((i) => (
-          <li key={i}>{i}</li>
-        ))}
-      </ul>
-    );
-
-  return <p>{renderTextWithLink(b.text)}</p>;
-}
 
 export default async function PostPage({ params }) {
   const { slug } = await params;
