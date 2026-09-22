@@ -41,24 +41,46 @@ function fmt(d) {
   return new Date(d).toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' });
 }
 
-function renderTextWithLink(text) {
-  const keyword = 'property dealer in Jind';
-  const index = text.indexOf(keyword);
+function Block({ b }) {
+  if (b.type === 'h2') return <h2>{b.text}</h2>;
+  if (b.type === 'h3') return <h3>{b.text}</h3>;
 
-  if (index === -1) return text;
+  if (b.type === 'quote')
+    return (
+      <blockquote className="my-8 border-l-2 border-gold bg-white px-6 py-5 font-display text-[1.15rem] leading-relaxed text-ink">
+        {b.text}
+      </blockquote>
+    );
 
-  return (
-    <>
-      {text.slice(0, index)}
-      <Link
-        href="/"
-        className="font-semibold text-gold underline decoration-gold/40 underline-offset-4"
-      >
-        {keyword}
-      </Link>
-      {text.slice(index + keyword.length)}
-    </>
-  );
+  if (b.type === 'ul')
+    return (
+      <ul>
+        {b.items.map((i) => (
+          <li key={i}>{i}</li>
+        ))}
+      </ul>
+    );
+
+  if (b.linkKeyword && b.linkHref) {
+    const position = b.text.indexOf(b.linkKeyword);
+
+    if (position !== -1) {
+      return (
+        <p>
+          {b.text.slice(0, position)}
+          <Link
+            href={b.linkHref}
+            className="font-semibold text-gold underline decoration-gold/40 underline-offset-4"
+          >
+            {b.linkKeyword}
+          </Link>
+          {b.text.slice(position + b.linkKeyword.length)}
+        </p>
+      );
+    }
+  }
+
+  return <p>{b.text}</p>;
 }
 
 
