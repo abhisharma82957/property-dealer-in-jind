@@ -41,15 +41,37 @@ function fmt(d) {
   return new Date(d).toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' });
 }
 
+function renderTextWithLink(text) {
+  const keyword = 'property dealer in Jind';
+  const index = text.indexOf(keyword);
+
+  if (index === -1) return text;
+
+  return (
+    <>
+      {text.slice(0, index)}
+      <Link
+        href="/"
+        className="font-semibold text-gold underline decoration-gold/40 underline-offset-4"
+      >
+        {keyword}
+      </Link>
+      {text.slice(index + keyword.length)}
+    </>
+  );
+}
+
 function Block({ b }) {
   if (b.type === 'h2') return <h2>{b.text}</h2>;
   if (b.type === 'h3') return <h3>{b.text}</h3>;
+
   if (b.type === 'quote')
     return (
       <blockquote className="my-8 border-l-2 border-gold bg-white px-6 py-5 font-display text-[1.15rem] leading-relaxed text-ink">
         {b.text}
       </blockquote>
     );
+
   if (b.type === 'ul')
     return (
       <ul>
@@ -58,7 +80,8 @@ function Block({ b }) {
         ))}
       </ul>
     );
-  return <p>{b.text}</p>;
+
+  return <p>{renderTextWithLink(b.text)}</p>;
 }
 
 export default async function PostPage({ params }) {
