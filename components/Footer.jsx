@@ -37,6 +37,46 @@ export default function Footer() {
               {site.street} {site.city}, {site.state}, {site.postalCode}
             </p>
             <p className="text-ivory/60">{site.hours}</p>
+            {/* Social Media */}
+<div className="mt-5 flex items-center gap-4">
+
+  {/* Facebook */}
+  <a
+    href="https://www.facebook.com/share/19UbkuLDCX/?mibextid=wwXIfr"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Facebook"
+    className="flex h-10 w-10 items-center justify-center rounded-full border border-goldlight/40 text-goldlight transition hover:bg-goldlight hover:text-ink"
+  >
+    <svg
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      className="h-5 w-5"
+      aria-hidden="true"
+    >
+      <path d="M22 12a10 10 0 1 0-11.563 9.875v-6.987H7.898V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.242 0-1.63.771-1.63 1.562V12h2.773l-.443 2.888h-2.33v6.987A10.002 10.002 0 0 0 22 12Z" />
+    </svg>
+  </a>
+
+  {/* Instagram */}
+  <a
+    href="https://www.instagram.com/satyanarayan_propeties"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Instagram"
+    className="flex h-10 w-10 items-center justify-center rounded-full border border-goldlight/40 text-goldlight transition hover:bg-goldlight hover:text-ink"
+  >
+    <svg
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      className="h-5 w-5"
+      aria-hidden="true"
+    >
+      <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm10.5 1.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z" />
+    </svg>
+  </a>
+
+</div>
           </div>
         </div>
 
