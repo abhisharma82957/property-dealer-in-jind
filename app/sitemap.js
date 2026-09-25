@@ -43,6 +43,18 @@ export default function sitemap() {
       priority: 0.8,
       },
     {
+      url: "https://property-dealer-in-jind.vercel.app/blog/property-for-sale-in-jind",
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+      },
+    {
+      url: "https://property-dealer-in-jind.vercel.app/blog/plots-for-sale-in-jind",
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+      },
+    {
       url: "https://property-dealer-in-jind.vercel.app/blog/buy-property-in-jind",
       lastModified: new Date(),
       changeFrequency: "monthly",
